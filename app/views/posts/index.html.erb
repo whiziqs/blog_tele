@@ -1,0 +1,9 @@
+<div class="alll_posts">
+  <h2>All blogs coming from active admin.</h2>
+    <h2>Please seed the data</h2>
+  <% @posts.each do |p| %>
+    <h3><%= link_to p.title, post_path(p) %></h3>
+    <p><%= p.body %></p>
+    by <%= (p.author.present? && p.author.name.present?) ? (link_to p.author.name, author_path(p.author_id)) : "Staff Writer" %>
+    <hr>
+<% end %></div>
